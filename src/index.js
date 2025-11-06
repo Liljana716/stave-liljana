@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./index.css"; // (neobvezno, če želiš dodati CSS)
+import AppWrapper from "./App"; // če uporabljaš AppWrapper kot prej
+import { AuthProvider } from "./contexts/AuthContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      <AppWrapper />
+    </AuthProvider>
   </React.StrictMode>
 );
