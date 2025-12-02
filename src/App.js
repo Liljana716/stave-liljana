@@ -15,7 +15,7 @@ import "./styles.css";
 import TeamStats from './components/TeamStats';
 import Notifications from './components/Notifications';
 import UserStats from './components/UserStats';
-
+import Help from "./components/Help";  
 
 function AppContent() {
   const navigate = useNavigate();
@@ -30,7 +30,8 @@ function AppContent() {
         }
       } else {
         // ✅ če nisi prijavljen, preusmeri na login
-        if (location.pathname !== "/" && location.pathname !== "/register") {
+        if (location.pathname !== "/" && location.pathname !== "/register" && location.pathname !== "/help") 
+        {
           navigate("/");
         }
       }
@@ -42,7 +43,11 @@ function AppContent() {
     <div>
       {/* 🔹 Navbar */}
       <nav className="bg-gray-900 text-white px-6 py-4 flex justify-between items-center shadow-md">
-        <div className="flex gap-6">
+        <div className="flex gap-6" >
+          
+          <Link to="/help" className="hover:text-purple-400 font-semibold">
+            HELP
+          </Link>
           <Link to="/" className="hover:text-green-400 font-semibold">
             HOME
           </Link>
@@ -80,6 +85,7 @@ function AppContent() {
         <Route path="/team-stats" element={<TeamStats teamName="Maribor" />} />
         <Route path="/notifications" element={<Notifications favorites={["Maribor", "Real Madrid"]} />} />
         <Route path="/user-stats" element={<UserStats />} />
+        <Route path="/help" element={<Help />} />
       </Routes>
     </div>
   );
