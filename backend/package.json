@@ -1,0 +1,11 @@
+{
+  "name": "stave-backend",
+  "version": "1.0.0",
+  "main": "src/betting.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
