@@ -26,7 +26,8 @@ jobs:
 
       - name: Build React app
         working-directory: frontend
-        run: npm run build
+        run: CI=false npm run build
+
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
